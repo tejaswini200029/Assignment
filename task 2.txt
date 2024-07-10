@@ -1,0 +1,62 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        
+        Console.WriteLine("Series a:");
+        GenerateSquareSeries(10);
+        Console.WriteLine();
+
+      
+        Console.WriteLine("Series b:");
+        GenerateFibonacciSeries(13);
+        Console.WriteLine();
+
+       
+        Console.WriteLine("Series c:");
+        GenerateCustomSeries(14);
+        Console.WriteLine();
+    }
+
+    
+    public static void GenerateSquareSeries(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write(i * i + " ");
+        }
+        Console.WriteLine();
+    }
+
+    
+    public static void GenerateFibonacciSeries(int n)
+    {
+        int a = 0, b = 1, c;
+
+        Console.Write(a + " " + b + " ");
+
+        for (int i = 2; i < n; i++)
+        {
+            c = a + b;
+            Console.Write(c + " ");
+            a = b;
+            b = c;
+        }
+        Console.WriteLine();
+    }
+
+    
+    public static void GenerateCustomSeries(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 3 == 0 || i % 5 == 0)
+            {
+                Console.Write(i + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+}

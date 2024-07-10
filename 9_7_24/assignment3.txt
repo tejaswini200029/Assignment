@@ -1,0 +1,70 @@
+using System;
+
+public class Patient
+{
+    public int PatientId { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Gender { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public string Address { get; set; }
+    public bool HasInsurance { get; set; }
+    public double Weight { get; set; }
+    public string ContactNumber { get; set; }
+
+    public void DisplayDetails()
+    {
+        Console.WriteLine("Patient Details:");
+        Console.WriteLine($"ID: {PatientId}");
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Age: {Age}");
+        Console.WriteLine($"Gender: {Gender}");
+        Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
+        Console.WriteLine($"Address: {Address}");
+        Console.WriteLine($"Has Insurance: {HasInsurance}");
+        Console.WriteLine($"Weight: {Weight} kg");
+        Console.WriteLine($"Contact Number: {ContactNumber}");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // a. Create required number of variables to store patient details
+        // b. Include all data types: int, string, bool, double, datetime
+        // c. Minimum 8 details need to be stored about a patient
+        
+        Patient patient = new Patient();
+
+        Console.WriteLine("Enter patient ID:");
+        patient.PatientId = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter patient name:");
+        patient.Name = Console.ReadLine();
+
+        Console.WriteLine("Enter patient age:");
+        patient.Age = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter patient gender:");
+        patient.Gender = Console.ReadLine();
+
+        Console.WriteLine("Enter patient date of birth (yyyy-mm-dd):");
+        patient.DateOfBirth = DateTime.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter patient address:");
+        patient.Address = Console.ReadLine();
+
+        Console.WriteLine("Does the patient have insurance? (true/false):");
+        patient.HasInsurance = bool.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter patient weight in kg:");
+        patient.Weight = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter patient contact number:");
+        patient.ContactNumber = Console.ReadLine();
+
+        // Display patient details
+        patient.DisplayDetails();
+    }
+}
